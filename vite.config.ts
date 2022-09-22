@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
 
 import path from 'path'
-import { defineConfig } from 'vite'
+import { build, defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'

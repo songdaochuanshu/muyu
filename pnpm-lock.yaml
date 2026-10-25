@@ -8,6 +8,7 @@ specifiers:
   '@vitejs/plugin-vue': ^3.1.0
   '@vue/test-utils': ^2.0.2
   '@vueuse/core': ^9.2.0
+  '@vueuse/sound': ^1.1.7
   eslint: ^8.23.0
   jsdom: ^20.0.0
   pnpm: ^7.11.0
@@ -22,11 +23,14 @@ specifiers:
   vue: ^3.2.38
   vue-router: ^4.1.5
   vue-tsc: ^0.40.8
+  vue3-spring: ^0.0.2
 
 dependencies:
   '@vueuse/core': 9.2.0_vue@3.2.38
+  '@vueuse/sound': 1.1.7_vue@3.2.38
   vue: 3.2.38
   vue-router: 4.1.5_vue@3.2.38
+  vue3-spring: 0.0.2_vue@3.2.38
 
 devDependencies:
   '@antfu/eslint-config': 0.26.3_yqf6kl63nyoq5megxukfnom5rm
@@ -831,6 +835,15 @@ packages:
       '@vue/compiler-dom': 3.2.38
       '@vue/shared': 3.2.38
 
+  /@vue/composition-api/1.7.2_vue@3.2.38:
+    resolution: {integrity: sha512-M8jm9J/laYrYT02665HkZ5l2fWTK4dcVg3BsDHm/pfz+MjDYwX+9FUaZyGwEyXEDonQYRCo0H7aLgdklcIELjw==}
+    requiresBuild: true
+    peerDependencies:
+      vue: '>= 2.5 < 2.7'
+    dependencies:
+      vue: 3.2.38
+    dev: false
+
   /@vue/devtools-api/6.2.1:
     resolution: {integrity: sha512-OEgAMeQXvCoJ+1x8WyQuVZzFo0wcyCmUR3baRVLmKBo1LmYZWMlRiXlux5jd0fqVJu6PfDbOrZItVqUEzLobeQ==}
     dev: false
@@ -899,10 +912,21 @@ packages:
   /@vueuse/shared/9.2.0_vue@3.2.38:
     resolution: {integrity: sha512-NnRp/noSWuXW0dKhZK5D0YLrDi0nmZ18UeEgwXQq7Ul5TTP93lcNnKjrHtd68j2xFB/l59yPGFlCryL692bnrA==}
     dependencies:
-      vue-demi: 0.13.6_vue@3.2.38
+      vue-demi: 0.14.10_vue@3.2.38
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+
+  /@vueuse/sound/1.1.7_vue@3.2.38:
+    resolution: {integrity: sha512-rn4uIeEz9SqZ82KroFQ4OGXRIZ8cLlvfk/CxfZBBkjfRjE1VpanzKYCAoN3dD716dBfLPsAa6Aq7VV6TpZCpVw==}
+    dependencies:
+      howler: 2.2.4
+      vue-demi: 0.14.10_thvcyca3lkq3t3xakmpdvcwtgq
+    optionalDependencies:
+      '@vue/composition-api': 1.7.2_vue@3.2.38
+    transitivePeerDependencies:
+      - vue
+    dev: false
 
   /abab/2.0.6:
     resolution: {integrity: sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==}
@@ -2565,6 +2589,10 @@ packages:
     dependencies:
       lru-cache: 7.13.1
     dev: true
+
+  /howler/2.2.4:
+    resolution: {integrity: sha512-iARIBPgcQrwtEr+tALF+rapJ8qSc+Set2GJQl7xT1MQzWaVkFebdJhR3alVlSiUf5U7nAANKuj3aWpwerocD5w==}
+    dev: false
 
   /html-encoding-sniffer/3.0.0:
     resolution: {integrity: sha512-oWv4T4yJ52iKrufjnyZPkrN0CH3QnrUqdB6In1g5Fe1mia8GmF36gnfNySxoZtxD5+NmYw1EElVXiBk93UeskA==}
@@ -4722,6 +4750,36 @@ packages:
     dependencies:
       vue: 3.2.38
 
+  /vue-demi/0.14.10_thvcyca3lkq3t3xakmpdvcwtgq:
+    resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      '@vue/composition-api': 1.7.2_vue@3.2.38
+      vue: 3.2.38
+    dev: false
+
+  /vue-demi/0.14.10_vue@3.2.38:
+    resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.2.38
+
   /vue-eslint-parser/9.0.3_eslint@8.23.0:
     resolution: {integrity: sha512-yL+ZDb+9T0ELG4VIFo/2anAOz8SvBdlqEnQnvJ3M7Scq56DvtjY0VY88bByRZB0D4J0u8olBcfrXTVONXsh4og==}
     engines: {node: ^14.17.0 || >=16.0.0}
@@ -4768,6 +4826,14 @@ packages:
       '@vue/runtime-dom': 3.2.38
       '@vue/server-renderer': 3.2.38_vue@3.2.38
       '@vue/shared': 3.2.38
+
+  /vue3-spring/0.0.2_vue@3.2.38:
+    resolution: {integrity: sha512-fBH6fxzJiB/ZtcuTqlzUWCgoo9Hx1dclFPzYCjz/DNOFqTzKKmcuIRObl/Y262h8TIski1z1+FiKnviCGN2U5Q==}
+    peerDependencies:
+      vue: ^3.0.0-beta.13
+    dependencies:
+      vue: 3.2.38
+    dev: false
 
   /w3c-hr-time/1.0.2:
     resolution: {integrity: sha512-z8P5DvDNjKDoFIHK7q8r8lackT6l+jo/Ye3HOle7l9nICP9lf1Ci25fy9vHd0JOWewkIFzXIEig3TdKT7JQ5fQ==}
